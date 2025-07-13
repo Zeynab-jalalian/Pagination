@@ -37,3 +37,16 @@ prevNext.forEach((button) => {
     });
   });
 });
+
+startBtn.addEventListener("click",()=>{
+    document.querySelector(".active").classList.remove("active");
+    numbers[0].classList.add("active");
+    currentStep=0;
+    updateBtn()
+})
+endBtn.addEventListener("click",()=>{
+    document.querySelector(".active").classList.remove("active");
+    numbers[4].classList.add("active");
+    currentStep=4;
+    updateBtn()
+})
