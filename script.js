@@ -12,10 +12,10 @@ const updateBtn = () => {
     startBtn.disabled = true;
     prevNext[0].disabled = true;
   } else {
-    endBtn.disabled =false;
-    prevNext[1].disabled =false;
-    startBtn.disabled =false;
-    prevNext[0].disabled =false;
+    endBtn.disabled = false;
+    prevNext[1].disabled = false;
+    startBtn.disabled = false;
+    prevNext[0].disabled = false;
   }
 };
 numbers.forEach((number, numIndex) => {
@@ -38,15 +38,19 @@ prevNext.forEach((button) => {
   });
 });
 
-startBtn.addEventListener("click",()=>{
-    document.querySelector(".active").classList.remove("active");
-    numbers[0].classList.add("active");
-    currentStep=0;
-    updateBtn()
-})
-endBtn.addEventListener("click",()=>{
-    document.querySelector(".active").classList.remove("active");
-    numbers[4].classList.add("active");
-    currentStep=4;
-    updateBtn()
-})
+startBtn.addEventListener("click", () => {
+  document.querySelector(".active").classList.remove("active");
+  numbers[0].classList.add("active");
+  currentStep = 0;
+  updateBtn();
+  endBtn.disabled = false;
+  prevNext[1].disabled = false;
+});
+endBtn.addEventListener("click", () => {
+  document.querySelector(".active").classList.remove("active");
+  numbers[4].classList.add("active");
+  currentStep = 4;
+  updateBtn();
+  startBtn.disabled = false;
+  prevNext[0].disabled = false;
+});
