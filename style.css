@@ -57,3 +57,6 @@ button:disabled{
     color: #b3b3b3;
     pointer-events: none;
 }
+button i{
+    pointer-events: none;
+}
